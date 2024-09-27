@@ -10,6 +10,7 @@ public class OperatorsLearning {
         System.out.println("total: " + total);
 
         int multiple = myNum1 * myNum2;
+        System.out.println(multiple);
 
         System.out.println(5 / 2);
         System.out.println(5 % 2);
