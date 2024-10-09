@@ -24,7 +24,7 @@ public class TestLab07_2 {
 
         TestLab07_2 animalRacing = new TestLab07_2();
         Animal winner = animalRacing.findRacingWinner(horse, tiger, dog);
-        System.out.println("Winner is " + winner.getClass().getSimpleName() + ", with speed: " + winner.getRealSpeed());
+        System.out.println("Winner is " + winner.getClass().getSimpleName() + ", with speed: " + winner.getSpeed());
 
     }
 
@@ -35,10 +35,10 @@ public class TestLab07_2 {
 
         Animal winner = horse;
 
-        if (winner.getRealSpeed() < tiger.getRealSpeed()) {
+        if (winner.getSpeed() < tiger.getSpeed()) {
              winner = tiger;
         }
-        if (winner.getRealSpeed() < dog.getRealSpeed()) {
+        if (winner.getSpeed() < dog.getSpeed()) {
             winner = dog;
         }
         return winner;
