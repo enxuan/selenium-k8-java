@@ -3,7 +3,7 @@ package lab.lab_08.lab07_2;
 import java.security.SecureRandom;
 
 public class Animal {
-    public int realSpeed;
+    private int realSpeed;
 
 
     public Animal(int maxSpeed) {

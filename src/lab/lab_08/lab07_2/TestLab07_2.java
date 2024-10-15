@@ -1,5 +1,8 @@
 package lab.lab_08.lab07_2;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TestLab07_2 {
 
     /* *
@@ -21,26 +24,23 @@ public class TestLab07_2 {
         Animal horse = new Horse();
         Animal tiger = new Tiger();
         Animal dog = new Dog();
+        List<Animal> animalList = Arrays.asList(horse, tiger, dog);
 
         TestLab07_2 animalRacing = new TestLab07_2();
-        Animal winner = animalRacing.findRacingWinner(horse, tiger, dog);
+        Animal winner = animalRacing.findRacingWinner(animalList);
         System.out.println("Winner is " + winner.getClass().getSimpleName() + ", with speed: " + winner.getSpeed());
 
     }
 
-    public Animal findRacingWinner(Animal horse, Animal tiger, Animal dog) {
-        System.out.println("horse speed: " + horse.getSpeed());
-        System.out.println("tiger speed: " + tiger.getSpeed());
-        System.out.println("dog speed: " + dog.getSpeed());
+    public Animal findRacingWinner(List<Animal> animalList) {
 
-        Animal winner = horse;
+        Animal winner = animalList.get(0);
+        for (Animal animal : animalList) {
+            if (animal.getSpeed() > winner.getSpeed()) {
+                winner = animal;
+            }
+        }
 
-        if (winner.getSpeed() < tiger.getSpeed()) {
-             winner = tiger;
-        }
-        if (winner.getSpeed() < dog.getSpeed()) {
-            winner = dog;
-        }
         return winner;
     }
 }

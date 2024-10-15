@@ -17,16 +17,18 @@ public class Lab07_1 {
         Employee ti = new FullTimeEmployee();
         Employee teo = new ContractEmployee();
         Employee a = new FullTimeEmployee();
-        int totalSalary = 0;
-
         empList.add(ti);
         empList.add(teo);
         empList.add(a);
 
+        System.out.println("The total salary: " + getTotalSalary(empList));
+    }
+
+    public static int getTotalSalary(List<Employee> empList){
+        int totalSalary = 0;
         for (Employee employee : empList) {
             totalSalary += employee.getSalary();
         }
-
-        System.out.println("The total salary: " + totalSalary);
+        return totalSalary;
     }
 }
